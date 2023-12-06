@@ -4,7 +4,7 @@ module.exports = {
   getAllOrders: (limit, offset, search, sort) =>
     new Promise((resolve, reject) => {
       connection.query(
-        `SELECT * FROM orders WHERE name LIKE '%${search}%' ORDER BY ${sort}  LIMIT ? OFFSET ?`,
+        `SELECT * FROM orders WHERE employee LIKE '%${search}%' ORDER BY ${sort}  LIMIT ? OFFSET ?`,
         [limit, offset],
         (err, result) => {
           if (!err) {
